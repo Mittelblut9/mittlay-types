@@ -13,15 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - uses: actions/setup-node@v5
         with:
           node-version: 22
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mittlay'
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
       - run: pnpm install
 
