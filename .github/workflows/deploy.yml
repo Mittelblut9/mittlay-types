@@ -1,24 +1,31 @@
 name: Build and Deploy Types
 
 on:
-    release:
-        types: [created]
-    push:
-        branches:
-            - main
+  release:
+    types: [created]
+  push:
+    branches:
+      - main
 
 jobs:
-    publish-gpr:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v5
-            - uses: actions/setup-node@v5
-              with:
-                node-version: '22'
-                registry-url: 'https://npm.pkg.github.com'
-                scope: '@mittlay'
-            - run: npm install
-            - run: npm run build
-            - run: npm publish
-              env:
-                NODE_AUTH_TOKEN: ${{ secrets.MITTLAY_GITHUB_TOKEN }}
+  publish-gpr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@mittlay'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: true   # entspricht pnpm install
+
+      - run: pnpm build
+
+      - run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.MITTLAY_GITHUB_TOKEN }}
