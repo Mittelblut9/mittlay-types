@@ -11,3 +11,4 @@ export * from './interfaces/IStreamElements';
 export * from './enum/appwrite.enum';
 export * from './enum/default.enum';
 export * from './enum/enum';
+export * from './enum/ESocket';
