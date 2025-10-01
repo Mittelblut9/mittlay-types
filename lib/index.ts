@@ -1,14 +1,14 @@
-export * from './interfaces/IAppwrite';
-export * from './interfaces/IGeneral';
-export * from './interfaces/IModel';
-export * from './interfaces/IOBS';
-export * from './interfaces/IPermissions';
-export * from './interfaces/IScreenElements';
-export * from './interfaces/ISpotify';
-export * from './interfaces/IStreamElements';
+export * from './interfaces/IAppwrite.js';
+export * from './interfaces/IGeneral.js';
+export * from './interfaces/IModel.js';
+export * from './interfaces/IOBS.js';
+export * from './interfaces/IPermissions.js';
+export * from './interfaces/IScreenElements.js';
+export * from './interfaces/ISpotify.js';
+export * from './interfaces/IStreamElements.js';
 
 // enums
-export * from './enum/appwrite.enum';
-export * from './enum/default.enum';
-export * from './enum/enum';
-export * from './enum/ESocket';
+export * from './enum/appwrite.enum.js';
+export * from './enum/default.enum.js';
+export * from './enum/enum.js';
+export * from './enum/ESocket.js';
